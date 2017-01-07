@@ -11,16 +11,16 @@ class Money {
         this.currency = currency;
     }
 
-    static Dollar dollar(final int amount) {
-        return new Dollar(amount, "USD");
+    static Money dollar(final int amount) {
+        return new Money(amount, "USD");
     }
 
     Money times(final int multipleBy) {
         return new Money(amount * multipleBy, currency);
     }
 
-    static Franc franc(final int amount) {
-        return new Franc(amount, "CHF");
+    static Money franc(final int amount) {
+        return new Money(amount, "CHF");
     }
 
     String currency() {
