@@ -8,4 +8,9 @@ class Sum implements Expression{
         this.money1 = money1;
         this.money2 = money2;
     }
+
+    public Money reduce(final String currencyTo) {
+        final int total = money1.amount + money2.amount;
+        return new Money(total, currencyTo);
+    }
 }
