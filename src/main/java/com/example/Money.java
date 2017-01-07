@@ -16,7 +16,7 @@ class Money {
     }
 
     Money times(final int multipleBy) {
-        return null;
+        return new Money(amount * multipleBy, currency);
     }
 
     static Franc franc(final int amount) {
