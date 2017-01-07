@@ -15,6 +15,7 @@ class Bank {
     }
 
     int rate(final String from, final String to) {
+        if(from.equals(to)) return 1;
         return exchangeRates.get(new Pair(from, to));
     }
 

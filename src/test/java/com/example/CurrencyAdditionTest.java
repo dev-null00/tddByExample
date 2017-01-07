@@ -55,6 +55,11 @@ public class CurrencyAdditionTest {
         assertEquals(2,bank.rate("CHF", "USD"));
     }
 
+    @Test
+    public void testIdentity() throws Exception {
+        final Bank bank = new Bank();
+        assertEquals(1,bank.rate("USD", "USD"));
+    }
 
     @Test
     public void testPlusReturnsSum() throws Exception {
