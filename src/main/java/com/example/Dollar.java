@@ -3,11 +3,8 @@ package com.example;
 import java.util.Objects;
 
 class Dollar extends Money{
-    private final String currency;
-
     Dollar(final int amount, final String currency) {
-        this.amount = amount;
-        this.currency = currency;
+        super(amount, currency);
     }
 
     Dollar times(final int multipleBy) {

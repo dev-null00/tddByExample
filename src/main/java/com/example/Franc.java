@@ -3,10 +3,8 @@ package com.example;
 import java.util.Objects;
 
 class Franc extends Money{
-    private final String currency;
     Franc(final int amount, final String currency) {
-        this.amount = amount;
-        this.currency = currency;
+        super(amount, currency);
     }
 
     Franc times(final int multipleBy) {

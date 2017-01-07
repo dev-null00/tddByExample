@@ -1,7 +1,13 @@
 package com.example;
 
 abstract class Money {
-    int amount;
+    final int amount;
+    final String currency;
+
+    Money(final int amount, final String currency) {
+        this.amount = amount;
+        this.currency = currency;
+    }
 
     static Dollar dollar(final int amount) {
         return new Dollar(amount, "USD");
