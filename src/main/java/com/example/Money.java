@@ -40,7 +40,7 @@ class Money implements Expression{
         return Objects.hash(amount, currency);
     }
 
-    public Money plus(final Money money) {
-        return new Money(amount+ money.amount, currency);
+    Expression plus(final Money money) {
+        return new Sum(this, money);
     }
 }

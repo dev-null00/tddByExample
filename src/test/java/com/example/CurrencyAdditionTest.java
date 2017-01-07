@@ -17,13 +17,7 @@ public class CurrencyAdditionTest {
     TODO
     $5 + 10 CHF = $10 if CHF:USD is 2:1
     $5 + $5 = $10
-
      */
-    @Test
-    public void testAddition() throws Exception {
-        final Money ten = Money.dollar(5).plus(Money.dollar(5));
-        assertEquals(Money.dollar(10), ten);
-    }
 
     @Test
     public void testExpressionConcept() throws Exception {
@@ -35,6 +29,14 @@ public class CurrencyAdditionTest {
         final Bank bank = new Bank();
         final Money reduced = bank.reduce(sum, "USD");
         assertEquals(Money.dollar(15), reduced);
+    }
+
+    @Test
+    public void testPlusReturnsSum() throws Exception {
+        final Expression result = Money.dollar(5).plus(Money.dollar(10));
+        final Sum sum = (Sum) result;
+        assertEquals(Money.dollar(5), sum.money1);
+        assertEquals(Money.dollar(10), sum.money2);
     }
 
     @Test
