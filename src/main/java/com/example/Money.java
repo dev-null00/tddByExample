@@ -39,4 +39,8 @@ class Money {
     public int hashCode() {
         return Objects.hash(amount, currency);
     }
+
+    public Money plus(final Money money) {
+        return new Money(amount+ money.amount, currency);
+    }
 }

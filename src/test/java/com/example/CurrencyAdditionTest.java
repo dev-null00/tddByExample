@@ -19,6 +19,12 @@ public class CurrencyAdditionTest {
     $5 + $5 = $10
      */
     @Test
+    public void testAddition() throws Exception {
+        final Money ten = Money.dollar(5).plus(Money.dollar(5));
+        assertEquals(Money.dollar(10), ten);
+    }
+
+    @Test
     public void testMultiplication() throws Exception {
         final Money five = Money.dollar(5);
         assertEquals(Money.dollar(10), five.times(2));
