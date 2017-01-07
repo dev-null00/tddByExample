@@ -34,5 +34,4 @@ public class CurrencyAdditionTest {
     public void equals() throws Exception {
         assertTrue(new Dollar(10).equals(new Dollar(10)));
     }
-
 }
