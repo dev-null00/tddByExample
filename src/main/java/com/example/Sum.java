@@ -13,4 +13,9 @@ class Sum implements Expression{
         final int total = bank.reduce(money1, currencyTo).amount + bank.reduce(money2, currencyTo).amount;
         return new Money(total, currencyTo);
     }
+
+    @Override
+    public Expression plus(final Expression expression) {
+        return null;
+    }
 }
