@@ -7,7 +7,7 @@ class Dollar {
         this.amount = amount;
     }
 
-    void times(final int multipleBy) {
-        amount = amount * multipleBy;
+    Dollar times(final int multipleBy) {
+        return new Dollar(amount * multipleBy);
     }
 }

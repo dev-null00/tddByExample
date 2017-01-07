@@ -16,16 +16,16 @@ public class CurrencyAdditionTest {
     /*
     TODO
     $5 + 10 CHF = $10 if CHF:USD is 2:1
-    $5 * 2 = $10
     Make "amount" private
-    Dollar side-effects?
     Money rounding?
      */
     @Test
     public void testMultiplication() throws Exception {
         final Dollar five = new Dollar(5);
-        five.times(2);
-        assertEquals(10, five.amount);
+        final Dollar ten = five.times(2);
+        assertEquals(10, ten.amount);
+        final Dollar fifteen = five.times(3);
+        assertEquals(15, fifteen.amount);
     }
 
 }
