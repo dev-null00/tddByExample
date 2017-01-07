@@ -43,9 +43,18 @@ public class CurrencyAdditionTest {
     @Test
     public void testMoneyReducingToADifferentCurrency() throws Exception {
         final Bank bank = new Bank();
+        bank.addRate("CHF", "USD", 2);
         final Money reduced = bank.reduce(Money.franc(2), "USD");
         assertEquals(Money.dollar(1), reduced);
     }
+
+    @Test
+    public void testHoldingRates() throws Exception {
+        final Bank bank = new Bank();
+        bank.addRate("CHF", "USD", 2);
+        assertEquals(2,bank.rate("CHF", "USD"));
+    }
+
 
     @Test
     public void testPlusReturnsSum() throws Exception {
