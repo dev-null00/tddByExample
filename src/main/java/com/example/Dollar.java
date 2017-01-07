@@ -2,8 +2,7 @@ package com.example;
 
 import java.util.Objects;
 
-class Dollar {
-    private int amount;
+class Dollar extends Money{
 
     Dollar(final int amount) {
         this.amount = amount;
@@ -17,8 +16,8 @@ class Dollar {
     public boolean equals(final Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
-        final Dollar dollar = (Dollar) o;
-        return amount == dollar.amount;
+        final Money money = (Money) o;
+        return amount == money.amount;
     }
 
     @Override
