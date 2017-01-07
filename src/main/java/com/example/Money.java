@@ -8,4 +8,8 @@ abstract class Money {
     }
 
     abstract Money times(final int multipleBy);
+
+    static Franc franc(final int amount) {
+        return new Franc(amount);
+    }
 }
