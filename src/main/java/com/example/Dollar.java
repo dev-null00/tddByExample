@@ -3,13 +3,19 @@ package com.example;
 import java.util.Objects;
 
 class Dollar extends Money{
+    private final String currency;
 
     Dollar(final int amount) {
         this.amount = amount;
+        this.currency = "USD";
     }
 
     Dollar times(final int multipleBy) {
         return Money.dollar(amount * multipleBy);
+    }
+
+    String currency() {
+        return currency;
     }
 
     @Override

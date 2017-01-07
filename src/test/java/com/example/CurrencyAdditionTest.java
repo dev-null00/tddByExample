@@ -42,4 +42,10 @@ public class CurrencyAdditionTest {
         assertFalse(Money.franc(10).equals(Money.franc(6)));
         assertFalse(Money.dollar(10).equals(Money.franc(10)));
     }
+
+    @Test
+    public void testCurrency() throws Exception {
+        assertEquals("USD", Money.dollar(1).currency());
+        assertEquals("CHF", Money.franc(1).currency());
+    }
 }
