@@ -7,7 +7,7 @@ import java.util.Objects;
 class Bank {
     private final Map<Pair, Integer> exchangeRates = new HashMap<>();
     Money reduce(final Expression expression, final String currencyTo) {
-        return expression.reduce(currencyTo);
+        return expression.reduce(this, currencyTo);
     }
 
     void addRate(final String from, final String to, final int rate) {

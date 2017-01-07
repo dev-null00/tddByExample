@@ -1,5 +1,5 @@
 package com.example;
 
 interface Expression {
-    Money reduce(final String currencyTo);
+    Money reduce(final Bank bank, final String currencyTo);
 }

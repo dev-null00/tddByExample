@@ -44,15 +44,8 @@ class Money implements Expression{
         return new Sum(this, money);
     }
 
-    public Money reduce(final String currencyTo) {
-        Integer rate = null;
-        if ("CHF".equals(currency) && "USD".equals(currencyTo)) {
-            rate = 2;
-        }
-        else {
-            rate = 1;
-        }
-
+    public Money reduce(final Bank bank, final String currencyTo) {
+        final int rate = bank.rate(currency, currencyTo);
         return new Money(amount/rate, currencyTo);
     }
 }
