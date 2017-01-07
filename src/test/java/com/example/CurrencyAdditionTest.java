@@ -16,7 +16,9 @@ public class CurrencyAdditionTest {
     /*
     TODO
     $5 + 10 CHF = $10 if CHF:USD is 2:1
-    $5 + $5 = $10
+    Bank.reduce(Money)
+    Bank reduces multiplication
+    Reduce money with a conversion
      */
 
     @Test
