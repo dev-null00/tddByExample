@@ -18,7 +18,7 @@ public class CurrencyAdditionTest {
     $5 + 10 CHF = $10 if CHF:USD is 2:1
     Bank.reduce(Money)
     Bank reduces multiplication
-    Reduce money with a conversion
+    Hard coded rate
      */
 
     @Test
@@ -40,6 +40,12 @@ public class CurrencyAdditionTest {
         assertEquals(Money.dollar(10), reduced);
     }
 
+    @Test
+    public void testMoneyReducingToADifferentCurrency() throws Exception {
+        final Bank bank = new Bank();
+        final Money reduced = bank.reduce(Money.franc(2), "USD");
+        assertEquals(Money.dollar(1), reduced);
+    }
 
     @Test
     public void testPlusReturnsSum() throws Exception {
