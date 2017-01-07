@@ -44,7 +44,7 @@ class Money implements Expression{
         return new Sum(this, money);
     }
 
-    Money reduce(final String currencyTo) {
+    public Money reduce(final String currencyTo) {
         return this;
     }
 }
