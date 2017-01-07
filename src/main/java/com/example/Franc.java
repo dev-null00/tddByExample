@@ -18,9 +18,8 @@ class Franc extends Money{
     @Override
     public boolean equals(final Object o) {
         if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
         final Money money = (Money) o;
-        return amount == money.amount;
+        return amount == money.amount && currency == money.currency;
     }
 
     @Override

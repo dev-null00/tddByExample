@@ -41,11 +41,18 @@ public class CurrencyAdditionTest {
         assertTrue(Money.franc(10).equals(Money.franc(10)));
         assertFalse(Money.franc(10).equals(Money.franc(6)));
         assertFalse(Money.dollar(10).equals(Money.franc(10)));
+        assertFalse(Money.franc(10).equals(Money.dollar(10)));
     }
 
     @Test
     public void testCurrency() throws Exception {
         assertEquals("USD", Money.dollar(1).currency());
         assertEquals("CHF", Money.franc(1).currency());
+    }
+
+    @Test
+    public void differentClassEquality() {
+        assertTrue(new Money(10, "CHF").equals(Money.franc(10)));
+        assertTrue(Money.franc(10).equals(new Money(10, "CHF")));
     }
 }
