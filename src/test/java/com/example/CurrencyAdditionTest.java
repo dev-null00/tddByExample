@@ -15,8 +15,6 @@ public class CurrencyAdditionTest {
 
     /*
     TODO
-    Expression.plus
-    Sum.plus
     Expression.time
      */
 
@@ -28,6 +26,17 @@ public class CurrencyAdditionTest {
         bank.addRate("CHF", "USD", 2);
         final Money result = bank.reduce(fiveDollars.plus(tenFrancs), "USD");
         assertEquals(Money.dollar(10), result);
+    }
+
+    @Test
+    public void testSumPlusMoney() {
+        Expression fiveDollars = Money.dollar(5);
+        Expression tenFrancs = Money.franc(10);
+        Bank bank = new Bank();
+        bank.addRate("CHF", "USD", 2);
+        final Expression sum = fiveDollars.plus(tenFrancs);
+        final Money result = bank.reduce(sum.plus(Money.dollar(5)), "USD");
+        assertEquals(Money.dollar(15), result);
     }
 
     @Test
