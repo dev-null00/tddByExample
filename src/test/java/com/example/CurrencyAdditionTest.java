@@ -13,11 +13,6 @@ public class CurrencyAdditionTest {
     5. refactor to remove duplication
      */
 
-    /*
-    TODO
-    Expression.time
-     */
-
     @Test
     public void testMixedAddition() {
         Expression fiveDollars = Money.dollar(5);
@@ -38,6 +33,18 @@ public class CurrencyAdditionTest {
         final Money result = bank.reduce(sum.plus(Money.dollar(5)), "USD");
         assertEquals(Money.dollar(15), result);
     }
+
+    @Test
+    public void testSumTimes() {
+        Expression fiveDollars = Money.dollar(5);
+        Expression tenFrancs = Money.franc(10);
+        Bank bank = new Bank();
+        bank.addRate("CHF", "USD", 2);
+        final Expression sum = fiveDollars.plus(tenFrancs);
+        final Money result = bank.reduce(sum.times(2), "USD");
+        assertEquals(Money.dollar(20), result);
+    }
+
 
     @Test
     public void testExpressionConcept() throws Exception {

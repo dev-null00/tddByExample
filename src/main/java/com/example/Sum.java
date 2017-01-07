@@ -18,4 +18,9 @@ class Sum implements Expression{
     public Expression plus(final Expression expression) {
         return new Sum(this, expression);
     }
+
+    @Override
+    public Expression times(final int multipleBy) {
+        return new Sum(money1.times(multipleBy), money2.times(multipleBy));
+    }
 }
