@@ -2,7 +2,7 @@ package com.example;
 
 import java.util.Objects;
 
-class Money {
+class Money implements Expression{
     final int amount;
     final String currency;
 
