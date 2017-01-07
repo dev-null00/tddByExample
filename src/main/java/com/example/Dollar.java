@@ -9,7 +9,7 @@ class Dollar extends Money{
     }
 
     Dollar times(final int multipleBy) {
-        return new Dollar(amount * multipleBy);
+        return Money.dollar(amount * multipleBy);
     }
 
     @Override

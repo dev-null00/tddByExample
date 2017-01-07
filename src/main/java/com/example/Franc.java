@@ -8,7 +8,7 @@ class Franc extends Money{
     }
 
     Franc times(final int multipleBy) {
-        return new Franc(amount * multipleBy);
+        return Money.franc(amount * multipleBy);
     }
 
     @Override
