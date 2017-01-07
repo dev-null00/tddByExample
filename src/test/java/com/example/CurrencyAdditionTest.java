@@ -18,6 +18,7 @@ public class CurrencyAdditionTest {
     $5 + 10 CHF = $10 if CHF:USD is 2:1
     Money rounding?
     Dollar/Franc duplication
+    Common times
      */
     @Test
     public void testMultiplication() throws Exception {
