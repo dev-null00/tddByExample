@@ -33,5 +33,6 @@ public class CurrencyAdditionTest {
     @Test
     public void equals() throws Exception {
         assertTrue(new Dollar(10).equals(new Dollar(10)));
+        assertFalse(new Dollar(10).equals(new Dollar(6)));
     }
 }
