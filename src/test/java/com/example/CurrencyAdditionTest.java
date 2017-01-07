@@ -16,16 +16,13 @@ public class CurrencyAdditionTest {
     /*
     TODO
     $5 + 10 CHF = $10 if CHF:USD is 2:1
-    Make "amount" private
     Money rounding?
      */
     @Test
     public void testMultiplication() throws Exception {
         final Dollar five = new Dollar(5);
-        final Dollar ten = five.times(2);
-        assertEquals(10, ten.amount);
-        final Dollar fifteen = five.times(3);
-        assertEquals(15, fifteen.amount);
+        assertEquals(new Dollar(10), five.times(2));
+        assertEquals(new Dollar(15), five.times(3));
     }
 
     @Test
