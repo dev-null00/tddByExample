@@ -4,9 +4,9 @@ import java.util.Objects;
 
 class Franc extends Money{
     private final String currency;
-    Franc(final int amount) {
+    Franc(final int amount, final String currency) {
         this.amount = amount;
-        this.currency = "CHF";
+        this.currency = currency;
     }
 
     Franc times(final int multipleBy) {
