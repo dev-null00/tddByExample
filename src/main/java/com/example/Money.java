@@ -1,6 +1,8 @@
 package com.example;
 
-abstract class Money {
+import java.util.Objects;
+
+class Money {
     final int amount;
     final String currency;
 
@@ -13,11 +15,15 @@ abstract class Money {
         return new Dollar(amount, "USD");
     }
 
-    abstract Money times(final int multipleBy);
+    Money times(final int multipleBy) {
+        return null;
+    }
 
     static Franc franc(final int amount) {
         return new Franc(amount, "CHF");
     }
 
-    abstract String currency();
+    String currency() {
+        return currency;
+    }
 }

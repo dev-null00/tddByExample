@@ -7,8 +7,8 @@ class Franc extends Money{
         super(amount, currency);
     }
 
-    Franc times(final int multipleBy) {
-        return Money.franc(amount * multipleBy);
+    Money times(final int multipleBy) {
+        return new Money(amount * multipleBy, "CHF");
     }
 
     String currency() {
