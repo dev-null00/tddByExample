@@ -1,5 +1,11 @@
 package com.example;
 
-class Money {
+abstract class Money {
     int amount;
+
+    static Dollar dollar(final int amount) {
+        return new Dollar(amount);
+    }
+
+    abstract Money times(final int multipleBy);
 }
