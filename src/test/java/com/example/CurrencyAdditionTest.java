@@ -17,7 +17,7 @@ public class CurrencyAdditionTest {
     TODO
     $5 + 10 CHF = $10 if CHF:USD is 2:1
     Money rounding?
-    5 CHF * 2 = 10 CHF
+    Dollar/Franc duplication
      */
     @Test
     public void testMultiplication() throws Exception {
@@ -27,8 +27,18 @@ public class CurrencyAdditionTest {
     }
 
     @Test
+    public void testFrancMultiplication() throws Exception {
+        final Franc five = new Franc(5);
+        assertEquals(new Franc(10), five.times(2));
+        assertEquals(new Franc(15), five.times(3));
+    }
+
+    @Test
     public void equals() throws Exception {
         assertTrue(new Dollar(10).equals(new Dollar(10)));
         assertFalse(new Dollar(10).equals(new Dollar(6)));
+        assertTrue(new Franc(10).equals(new Franc(10)));
+        assertFalse(new Franc(10).equals(new Franc(6)));
+        assertFalse(new Dollar(10).equals(new Franc(10)));
     }
 }
