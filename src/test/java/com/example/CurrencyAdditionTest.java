@@ -13,11 +13,6 @@ public class CurrencyAdditionTest {
     5. refactor to remove duplication
      */
 
-    /*
-    TODO
-    $5 + 10 CHF = $10 if CHF:USD is 2:1
-     */
-
     @Test
     public void testMixedAddition() {
         Money fiveDollars = Money.dollar(5);

@@ -15,7 +15,7 @@ class Money implements Expression{
         return new Money(amount, "USD");
     }
 
-    Money times(final int multipleBy) {
+    Expression times(final int multipleBy) {
         return new Money(amount * multipleBy, currency);
     }
 
