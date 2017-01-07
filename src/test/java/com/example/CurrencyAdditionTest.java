@@ -16,10 +16,17 @@ public class CurrencyAdditionTest {
     /*
     TODO
     $5 + 10 CHF = $10 if CHF:USD is 2:1
-    Bank.reduce(Money)
-    Bank reduces multiplication
-    Hard coded rate
      */
+
+    @Test
+    public void testMixedAddition() {
+        Money fiveDollars = Money.dollar(5);
+        Money tenFrancs = Money.franc(10);
+        Bank bank = new Bank();
+        bank.addRate("CHF", "USD", 2);
+        final Money result = bank.reduce(fiveDollars.plus(tenFrancs), "USD");
+        assertEquals(Money.dollar(10), result);
+    }
 
     @Test
     public void testExpressionConcept() throws Exception {

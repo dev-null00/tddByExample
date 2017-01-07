@@ -10,7 +10,7 @@ class Sum implements Expression{
     }
 
     public Money reduce(final Bank bank, final String currencyTo) {
-        final int total = money1.amount + money2.amount;
+        final int total = bank.reduce(money1, currencyTo).amount + bank.reduce(money2, currencyTo).amount;
         return new Money(total, currencyTo);
     }
 }
