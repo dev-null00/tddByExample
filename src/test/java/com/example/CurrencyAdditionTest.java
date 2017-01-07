@@ -18,6 +18,8 @@ public class CurrencyAdditionTest {
     $5 + 10 CHF = $10 if CHF:USD is 2:1
     Make "amount" private
     Money rounding?
+    Equals()
+    Hashcode()
      */
     @Test
     public void testMultiplication() throws Exception {
@@ -26,6 +28,11 @@ public class CurrencyAdditionTest {
         assertEquals(10, ten.amount);
         final Dollar fifteen = five.times(3);
         assertEquals(15, fifteen.amount);
+    }
+
+    @Test
+    public void equals() throws Exception {
+        assertTrue(new Dollar(10).equals(new Dollar(10)));
     }
 
 }
