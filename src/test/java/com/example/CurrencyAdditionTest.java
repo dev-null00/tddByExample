@@ -17,6 +17,7 @@ public class CurrencyAdditionTest {
     TODO
     $5 + 10 CHF = $10 if CHF:USD is 2:1
     Money rounding?
+    5 CHF * 2 = 10 CHF
      */
     @Test
     public void testMultiplication() throws Exception {
