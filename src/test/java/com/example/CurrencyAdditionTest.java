@@ -34,6 +34,14 @@ public class CurrencyAdditionTest {
     }
 
     @Test
+    public void testMoneyReducing() throws Exception {
+        final Bank bank = new Bank();
+        final Money reduced = bank.reduce(Money.dollar(10), "USD");
+        assertEquals(Money.dollar(10), reduced);
+    }
+
+
+    @Test
     public void testPlusReturnsSum() throws Exception {
         final Expression result = Money.dollar(5).plus(Money.dollar(10));
         final Sum sum = (Sum) result;
