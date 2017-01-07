@@ -5,8 +5,8 @@ class Dollar extends Money{
         super(amount, currency);
     }
 
-    Dollar times(final int multipleBy) {
-        return Money.dollar(amount * multipleBy);
+    Money times(final int multipleBy) {
+        return new Money(amount * multipleBy, currency);
     }
 
     String currency() {
